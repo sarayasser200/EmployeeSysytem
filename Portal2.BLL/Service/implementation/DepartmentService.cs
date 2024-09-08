@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Portal2.BLL.Service.Interfaces;
 using Portal2.DAl.Entities;
 using Portal2.DAl.Repo.interfaces;
@@ -19,12 +19,12 @@ namespace Portal2.BLL.Service.Implementation
 
         public IEnumerable<Department> GetDepartments()
         {
-            return departmentRepo.GetDepartmentList(); // Assuming GetAll() fetches all departments
+            return departmentRepo.GetDepartmentList(); 
         }
 
         public Department GetDepartmentById(int id)
         {
-            return departmentRepo.GetById(id); // Assuming GetById() fetches a department by ID
+            return departmentRepo.GetById(id); 
         }
     }
 }
