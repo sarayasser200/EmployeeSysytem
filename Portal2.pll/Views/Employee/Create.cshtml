@@ -1,0 +1,129 @@
+﻿
+@model Portal2.BLL.ModelVM.EmployeeVM.CreateEmployeeVM
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="form-container">
+    <h2>@ViewData["Title"]</h2>
+
+  <form asp-action="CreateEmployee" asp-controller="Employee" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" asp-for="Name" value="@Model.Name" placeholder="Enter Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" asp-for="Age" value="@Model.Age" placeholder="Enter Age">
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+       <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" asp-for="Email" value="@Model.Email" placeholder="Enter Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control" asp-for="ImageName" placeholder="Upload Image">
+            <span asp-validation-for="ImageName" class="text-danger"></span>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="department">Department</label>
+            <select class="form-control" id="department" asp-for="SelectedDepartmentId" asp-items="Model.Departments">
+                <option value="">Select Department</option>
+            </select>
+            <span asp-validation-for="SelectedDepartmentId" class="text-danger"></span>
+        </div> 
+
+        <div class="form-group">
+            <label for="salary">Salary</label>
+            <input type="text" class="form-control" id="salary" asp-for="Salary" value="@Model.Salary" placeholder="Enter Salary">
+            <span asp-validation-for="Salary" class="text-danger"></span>
+        </div>
+
+        <div class="form-buttons">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a asp-controller="Employee" asp-action="Index" class="btn btn-secondary">Cancel</a>
+</div>
+
+
+    </form>
+</div>
+
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+    }
+
+    .form-container h2 {
+        text-align: center;
+        color: #003366; 
+        margin-bottom: 25px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #003366; 
+    }
+
+    .form-control {
+        border: 2px solid #003366; 
+        padding: 10px 15px;
+        border-radius: 30px;
+        width: 100%;
+        outline: none;
+        transition: all 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: #006699;
+    }
+
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .btn-primary {
+        background-color: #003366; 
+        border-color: #003366; 
+        border-radius: 30px;
+    }
+
+    .btn-primary:hover {
+        background-color: #006699; 
+        border-color: #006699; 
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        padding: 10px 20px;
+        border-radius: 30px;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+
+    .text-danger {
+        color: #ff5e5e;
+        font-size: 14px;
+    }
+</style>

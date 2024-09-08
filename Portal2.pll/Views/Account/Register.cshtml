@@ -1,0 +1,72 @@
+﻿@model Portal2.BLL.ModelVM.EmployeeVM.RegisterUserVM
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!-- Fullscreen container with a blue gradient background -->
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; background: linear-gradient(to bottom, #00c6ff, #0072ff);">
+
+    <!-- Form container with white background and subtle shadow -->
+    <div class="card shadow-lg border-0" style="width: 450px; border-radius: 15px; background-color: white;"> <!-- Increased width to 450px -->
+
+        <!-- Form header with centered title -->
+        <div class="text-center mt-4">
+            <h2 class="fw-bold" style="color: #003366;">Create Account</h2>
+        </div>
+
+        <!-- Form body -->
+        <div class="card-body px-4 py-4">
+            <form asp-action="Register">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <!-- Name field -->
+                <div class="form-group mb-3">
+                    <input asp-for="UserName" placeholder="Name" class="form-control form-control-lg border-0 shadow-sm" style="background: #f8f9fa; height: 40px;" /> <!-- Reduced height to 40px -->
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <input asp-for="Password" placeholder="Password" type="password" class="form-control form-control-lg border-0 shadow-sm" style="background: #f8f9fa; height: 40px;" /> <!-- Reduced height to 40px -->
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <!-- Confirm Password field -->
+                <div class="form-group mb-3">
+                    <input asp-for="ConfirmPassword" placeholder="Confirm Password" type="password" class="form-control form-control-lg border-0 shadow-sm" style="background: #f8f9fa; height: 40px;" /> <!-- Reduced height to 40px -->
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <!-- Address field -->
+                <div class="form-group mb-3">
+                    <input asp-for="Address" placeholder="Address" class="form-control form-control-lg border-0 shadow-sm" style="background: #f8f9fa; height: 40px;" /> <!-- Reduced height to 40px -->
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <!-- Email field -->
+                <div class="form-group mb-3">
+                    <input asp-for="Email" placeholder="Email" type="email" class="form-control form-control-lg border-0 shadow-sm" style="background: #f8f9fa; height: 40px;" /> <!-- Reduced height to 40px -->
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <!-- Password field -->
+                
+
+                <!-- Submit button -->
+                <div class="text-center mt-4 mb-3">
+                    <input type="submit" value="SIGN UP" class="btn btn-lg text-white fw-bold px-5 py-2" style="background: linear-gradient(to right, #00c6ff, #0072ff); border-radius: 30px;" />
+                </div>
+
+                <!-- 'Sign In' text link -->
+                <div class="text-center mb-3">
+                    <a href="@Url.Action("Login", "Account")" class="text-muted">SIGN IN</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
