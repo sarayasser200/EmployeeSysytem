@@ -1,50 +1,47 @@
-﻿@model Portal2.BLL.ModelVM.EmployeeVM.LoginUserVM
+@model Portal2.BLL.ModelVM.EmployeeVM.LoginUserVM
 
 @{
     ViewData["Title"] = "Login";
 }
 
-<!-- Fullscreen container with a blue gradient background -->
+
 <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; background: linear-gradient(to bottom, #00c6ff, #0072ff);">
 
-    <!-- Form container with white background and subtle shadow -->
+    
     <div class="card shadow-lg border-0" style="width: 400px; border-radius: 15px; background-color: white;"> <!-- Width set to 400px -->
 
-        <!-- Form header with centered title -->
+      
         <div class="text-center mt-4">
             <h2 class="fw-bold" style="color: #003366;">Login to Your Account</h2>
         </div>
 
-        <!-- Form body -->
+       
         <div class="card-body px-4 py-4">
             <form asp-action="Login">
                 <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
-                <!-- Username field -->
                 <div class="form-group mb-3">
                     <input asp-for="UserName" placeholder="Username" class="form-control form-control-lg border-0 shadow-sm" style="background: #f8f9fa; height: 40px;" />
                     <span asp-validation-for="UserName" class="text-danger"></span>
                 </div>
 
-                <!-- Password field -->
                 <div class="form-group mb-3">
                     <input asp-for="Password" placeholder="Password" type="password" class="form-control form-control-lg border-0 shadow-sm" style="background: #f8f9fa; height: 40px;" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
 
-                <!-- Remember me checkbox -->
                 <div class="form-group form-check mb-3">
                     <input class="form-check-input" asp-for="RemenberMe" />
                     <label class="form-check-label fw-bold" asp-for="RemenberMe">Remember Me</label>
                 </div>
 
-                <!-- Submit button -->
+              
                 <div class="text-center mt-4 mb-3">
                     <input type="submit" value="Login" class="btn btn-lg text-white fw-bold px-5 py-2" style="background: linear-gradient(to right, #00c6ff, #0072ff); border-radius: 30px;" />
                 </div>
             </form>
 
-            <!-- Footer with register link and back to list -->
+            
             <div class="text-center mt-3">
                 <p class="text-muted">Don't have an account? <a asp-action="Register" class="text-primary fw-bold">Register</a></p>
                 <a asp-action="Index" class="text-primary">Back to List</a>
