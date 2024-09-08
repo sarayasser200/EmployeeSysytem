@@ -48,7 +48,7 @@ namespace Portal2.pll.Controllers
                     //claims.Add(new Claim("color", "red"));
                     //await signInManager.SignInWithClaimsAsync(userModel, false, claims);
                    
-                    return RedirectToAction("Index", "Employee"); // Remove the extra space before "Employee"
+                    return RedirectToAction("Index", "Employee"); 
 
 
                 }
@@ -127,7 +127,7 @@ namespace Portal2.pll.Controllers
                     //claims.Add(new Claim("color", "red"));
                     //await signInManager.SignInWithClaimsAsync(userModel, false, claims);
 
-                    return RedirectToAction("Index", "Employee"); // Remove the extra space before "Employee"
+                    return RedirectToAction("Index", "Employee"); 
 
 
                 }
