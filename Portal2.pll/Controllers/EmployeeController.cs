@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -16,13 +16,13 @@ namespace Portal2.pll.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService1 employeeService;
-        private readonly IDepartmentService departmentService; // Corrected service name
+        private readonly IDepartmentService departmentService;
         private readonly IMapper mapper;
 
         public EmployeeController(IEmployeeService1 employeeService, IDepartmentService departmentService, IMapper mapper) // Added departmentService here
         {
             this.employeeService = employeeService;
-            this.departmentService = departmentService; // Corrected service assignment
+            this.departmentService = departmentService; 
             this.mapper = mapper;
         }
          
@@ -61,12 +61,12 @@ namespace Portal2.pll.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    // Delegate image upload to the service layer
+                    
                     if (emp.ImageName != null)
                     {
-                        // Process the file
+                        
                         var fileName = UploadFile.UploadImage("Profile",emp.ImageName);
-                        emp.Image = fileName; // Save the file name to the model or database
+                        emp.Image = fileName; 
                     }
                     if (emp.SelectedDepartmentId!=null){
                         emp.DeptId = emp.SelectedDepartmentId;
