@@ -1,37 +1,37 @@
-﻿@model Portal2.BLL.ModelVM.EmployeeVM.RoleVM
+@model Portal2.BLL.ModelVM.EmployeeVM.RoleVM
 
 @{
     ViewData["Title"] = "New Role";
 }
 
 <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-    <!-- Simple card container -->
+   
     <div class="card shadow-sm border-0" style="width: 400px; border-radius: 15px;">
 
-        <!-- Header -->
+      
         <div class="text-center mt-4">
             <h2 class="fw-bold" style="color: #333;">Create a New Role</h2>
         </div>
 
-        <!-- Form body -->
+       
         <div class="card-body px-4 py-4">
             <form asp-action="New">
                 <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
-                <!-- Role name input -->
+               
                 <div class="form-group mb-4">
                     <input asp-for="Rolename" placeholder="Role Name" class="form-control form-control-lg shadow-sm" style="background: #f8f9fa; height: 45px;" />
                     <span asp-validation-for="Rolename" class="text-danger"></span>
                 </div>
 
-                <!-- Submit button -->
+               
                 <div class="text-center">
                     <input type="submit" value="Create Role" class="btn btn-lg text-white fw-bold px-5 py-2" style="background-color: #007bff; border-radius: 30px;" />
                 </div>
             </form>
         </div>
 
-        <!-- Back to List link -->
+       
         <div class="text-center mt-3 mb-4">
             <a asp-action="Index" class="btn btn-outline-primary" style="border-radius: 30px;">Back to List</a>
         </div>
